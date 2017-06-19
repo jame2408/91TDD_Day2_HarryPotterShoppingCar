@@ -45,5 +45,18 @@ namespace HarryPotterShoppingCar
             //assert 
             Assert.AreEqual(270d, actual);
         }
+
+        [TestMethod]
+        public void 一二三四集各買了一本_價格應為_320元()
+        {
+            //arrange 
+            var target = new HarryPotterBook(new List<int> { 1, 1, 1, 1, 0 });
+
+            //act 
+            double actual = target.BuyBooks();
+
+            //assert 
+            Assert.AreEqual(320d, actual);
+        }
     }
 }
