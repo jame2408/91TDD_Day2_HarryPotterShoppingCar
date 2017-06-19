@@ -10,11 +10,11 @@ namespace HarryPotterShoppingCar
         private IList<int> _books;
         private readonly IDictionary<int, double> DISCOUNTS = new Dictionary<int, double>()
         {
-            {1, 1 },
-            {2, 0.95 },
-            {3, 0.9 },
-            {4, 0.8 },
-            {5, 0.75 }
+            {1, 1 }, // 買一本，沒打折
+            {2, 0.95 }, // 買兩本，打95折
+            {3, 0.9 }, // 買三本，打9折
+            {4, 0.8 }, // 買四本，打8折
+            {5, 0.75 } // 買五本，打75折
         };
 
 
@@ -25,8 +25,19 @@ namespace HarryPotterShoppingCar
 
         internal double BuyBooks()
         {
+            return DiscountPrice() + NoDiscountPrice();
+        }
+
+        private double DiscountPrice()
+        {
             var bookCount = _books.Count(x => x >= 1);
             return bookCount * ONEPOTTERBOOKPRICE * DISCOUNTS[bookCount];
+        }
+
+        private double NoDiscountPrice()
+        {
+            var bookCount = _books.Where(x => x > 1).Sum(x => x - 1);
+            return bookCount * ONEPOTTERBOOKPRICE;
         }
     }
 }
