@@ -14,7 +14,7 @@ namespace HarryPotterShoppingCar
             var target = new HarryPotterBook(new List<int> { 1, 0, 0, 0, 0 });
 
             //act 
-            double actual = target.BuyBooks();
+            double actual = target.BuyBooksPrice();
 
             //assert 
             Assert.AreEqual(100d, actual);
@@ -27,7 +27,7 @@ namespace HarryPotterShoppingCar
             var target = new HarryPotterBook(new List<int> { 1, 1, 0, 0, 0 });
 
             //act 
-            double actual = target.BuyBooks();
+            double actual = target.BuyBooksPrice();
 
             //assert 
             Assert.AreEqual(190d, actual);
@@ -40,7 +40,7 @@ namespace HarryPotterShoppingCar
             var target = new HarryPotterBook(new List<int> { 1, 1, 1, 0, 0 });
 
             //act 
-            double actual = target.BuyBooks();
+            double actual = target.BuyBooksPrice();
 
             //assert 
             Assert.AreEqual(270d, actual);
@@ -53,7 +53,7 @@ namespace HarryPotterShoppingCar
             var target = new HarryPotterBook(new List<int> { 1, 1, 1, 1, 0 });
 
             //act 
-            double actual = target.BuyBooks();
+            double actual = target.BuyBooksPrice();
 
             //assert 
             Assert.AreEqual(320d, actual);
@@ -66,7 +66,7 @@ namespace HarryPotterShoppingCar
             var target = new HarryPotterBook(new List<int> { 1, 1, 1, 1, 1 });
 
             //act 
-            double actual = target.BuyBooks();
+            double actual = target.BuyBooksPrice();
 
             //assert 
             Assert.AreEqual(375d, actual);
@@ -79,7 +79,7 @@ namespace HarryPotterShoppingCar
             var target = new HarryPotterBook(new List<int> { 1, 1, 2, 0, 0 });
 
             //act 
-            double actual = target.BuyBooks();
+            double actual = target.BuyBooksPrice();
 
             //assert 
             Assert.AreEqual(370d, actual);
@@ -92,7 +92,7 @@ namespace HarryPotterShoppingCar
             var target = new HarryPotterBook(new List<int> { 1, 2, 2, 0, 0 });
 
             //act 
-            double actual = target.BuyBooks();
+            double actual = target.BuyBooksPrice();
 
             //assert 
             Assert.AreEqual(460d, actual);
