@@ -30,19 +30,26 @@ namespace HarryPotterShoppingCar
 
         private double DiscountPrice()
         {
-            var price = 0d;
+            double discountPrice = 0d;
             while (hasDiscountBooks())
             {
-                price += GetBooksCount() * ONEPOTTERBOOKPRICE * DISCOUNTS[GetBooksCount()];
+                discountPrice += GetBooksCount() * ONEPOTTERBOOKPRICE * GetDiscount();
                 RemoveOnceDiscountBooks();
             }
-            return price;
+            return discountPrice;
         }
-
         private double NoDiscountPrice()
         {
-            var noDiscountBookCount = _books.Where(x => x > 1).Sum(x => x - 1);
-            return noDiscountBookCount * ONEPOTTERBOOKPRICE;
+            return GetBooksCount() * ONEPOTTERBOOKPRICE;
+        }
+
+        private double GetDiscount()
+        {
+            if (GetBooksCount() <= 0 || GetBooksCount() > 5)
+            {
+                return 1;
+            }
+            return DISCOUNTS[GetBooksCount()];
         }
 
         private bool hasDiscountBooks()
