@@ -22,7 +22,8 @@ namespace HarryPotterShoppingCar
 
         internal double BuyBooks()
         {
-            return _books.Count(x => x >= 1) * ONEPOTTERBOOKPRICE * DISCOUNTS[_books.Count(x => x >= 1)];
+            var bookCount = _books.Count(x => x >= 1);
+            return bookCount * ONEPOTTERBOOKPRICE * DISCOUNTS[bookCount];
         }
     }
 }
