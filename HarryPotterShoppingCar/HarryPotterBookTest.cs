@@ -14,10 +14,10 @@ namespace HarryPotterShoppingCar
             var target = new HarryPotterBook(new List<int> { 1, 0, 0, 0, 0 });
 
             //act 
-            double actual = target.BuyBooksPrice();
+            decimal actual = target.BuyBooksPrice();
 
             //assert 
-            Assert.AreEqual(100d, actual);
+            Assert.AreEqual(100m, actual);
         }
 
         [TestMethod]
@@ -27,10 +27,10 @@ namespace HarryPotterShoppingCar
             var target = new HarryPotterBook(new List<int> { 1, 1, 0, 0, 0 });
 
             //act 
-            double actual = target.BuyBooksPrice();
+            decimal actual = target.BuyBooksPrice();
 
             //assert 
-            Assert.AreEqual(190d, actual);
+            Assert.AreEqual(190m, actual);
         }
 
         [TestMethod]
@@ -40,10 +40,10 @@ namespace HarryPotterShoppingCar
             var target = new HarryPotterBook(new List<int> { 1, 1, 1, 0, 0 });
 
             //act 
-            double actual = target.BuyBooksPrice();
+            decimal actual = target.BuyBooksPrice();
 
             //assert 
-            Assert.AreEqual(270d, actual);
+            Assert.AreEqual(270m, actual);
         }
 
         [TestMethod]
@@ -53,10 +53,10 @@ namespace HarryPotterShoppingCar
             var target = new HarryPotterBook(new List<int> { 1, 1, 1, 1, 0 });
 
             //act 
-            double actual = target.BuyBooksPrice();
+            decimal actual = target.BuyBooksPrice();
 
             //assert 
-            Assert.AreEqual(320d, actual);
+            Assert.AreEqual(320m, actual);
         }
 
         [TestMethod]
@@ -66,10 +66,10 @@ namespace HarryPotterShoppingCar
             var target = new HarryPotterBook(new List<int> { 1, 1, 1, 1, 1 });
 
             //act 
-            double actual = target.BuyBooksPrice();
+            decimal actual = target.BuyBooksPrice();
 
             //assert 
-            Assert.AreEqual(375d, actual);
+            Assert.AreEqual(375m, actual);
         }
 
         [TestMethod]
@@ -79,10 +79,10 @@ namespace HarryPotterShoppingCar
             var target = new HarryPotterBook(new List<int> { 1, 1, 2, 0, 0 });
 
             //act 
-            double actual = target.BuyBooksPrice();
+            decimal actual = target.BuyBooksPrice();
 
             //assert 
-            Assert.AreEqual(370d, actual);
+            Assert.AreEqual(370m, actual);
         }
 
         [TestMethod]
@@ -92,10 +92,10 @@ namespace HarryPotterShoppingCar
             var target = new HarryPotterBook(new List<int> { 1, 2, 2, 0, 0 });
 
             //act 
-            double actual = target.BuyBooksPrice();
+            decimal actual = target.BuyBooksPrice();
 
             //assert 
-            Assert.AreEqual(460d, actual);
+            Assert.AreEqual(460m, actual);
         }
     }
 }

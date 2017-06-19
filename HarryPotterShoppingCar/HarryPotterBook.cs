@@ -6,15 +6,15 @@ namespace HarryPotterShoppingCar
 {
     internal class HarryPotterBook
     {
-        private const int ONEPOTTERBOOKPRICE = 100;
+        private const decimal ONEPOTTERBOOKPRICE = 100m;
         private IList<int> _books;
-        private readonly IDictionary<int, double> DISCOUNTS = new Dictionary<int, double>()
+        private readonly IDictionary<int, decimal> DISCOUNTS = new Dictionary<int, decimal>()
         {
-            {1, 1 }, // 買一本，沒打折
-            {2, 0.95 }, // 買兩本，打95折
-            {3, 0.9 }, // 買三本，打9折
-            {4, 0.8 }, // 買四本，打8折
-            {5, 0.75 } // 買五本，打75折
+            {1, 1m }, // 買一本，沒打折
+            {2, 0.95m }, // 買兩本，打95折
+            {3, 0.9m }, // 買三本，打9折
+            {4, 0.8m }, // 買四本，打8折
+            {5, 0.75m } // 買五本，打75折
         };
 
 
@@ -23,14 +23,14 @@ namespace HarryPotterShoppingCar
             this._books = books;
         }
 
-        internal double BuyBooksPrice()
+        internal decimal BuyBooksPrice()
         {
             return DiscountPrice() + NoDiscountPrice();
         }
 
-        private double DiscountPrice()
+        private decimal DiscountPrice()
         {
-            double discountPrice = 0d;
+            decimal discountPrice = 0m;
             while (hasDiscountBooks())
             {
                 discountPrice += GetBooksCount() * ONEPOTTERBOOKPRICE * GetDiscount();
@@ -38,12 +38,12 @@ namespace HarryPotterShoppingCar
             }
             return discountPrice;
         }
-        private double NoDiscountPrice()
+        private decimal NoDiscountPrice()
         {
             return GetBooksCount() * ONEPOTTERBOOKPRICE;
         }
 
-        private double GetDiscount()
+        private decimal GetDiscount()
         {
             if (GetBooksCount() <= 0 || GetBooksCount() > 5)
             {
