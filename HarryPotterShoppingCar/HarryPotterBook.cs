@@ -30,8 +30,19 @@ namespace HarryPotterShoppingCar
 
         private double DiscountPrice()
         {
-            var bookCount = _books.Count(x => x >= 1);
-            return bookCount * ONEPOTTERBOOKPRICE * DISCOUNTS[bookCount];
+            var price = 0d;            
+            while (_books.Count(x => x >= 1) > 0)
+            {
+                price += _books.Count(x => x >= 1) * ONEPOTTERBOOKPRICE * DISCOUNTS[_books.Count(x => x >= 1)];
+                for (int i = 0; i < _books.Count; i++)
+                {
+                    if (_books[i] > 0)
+                    {
+                        _books[i]--;
+                    }
+                }
+            }
+            return price;
         }
 
         private double NoDiscountPrice()
