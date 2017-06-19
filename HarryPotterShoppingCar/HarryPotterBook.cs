@@ -1,20 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace HarryPotterShoppingCar
 {
     internal class HarryPotterBook
     {
-        private IList<int> list;
+        private const int ONEPOTTERBOOKPRICE = 100;
+        private IList<int> _books;
 
-        internal HarryPotterBook(IList<int> list)
+        internal HarryPotterBook(IList<int> books)
         {
-            this.list = list;
+            this._books = books;
         }
 
         internal double BuyBooks()
         {
-            throw new NotImplementedException();
+            return _books.Count(x => x >= 1) * ONEPOTTERBOOKPRICE;
         }
     }
 }
