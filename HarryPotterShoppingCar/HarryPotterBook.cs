@@ -12,7 +12,8 @@ namespace HarryPotterShoppingCar
         {
             {1, 1 },
             {2, 0.95 },
-            {3, 0.9 }
+            {3, 0.9 },
+            {4, 0.8 }
         };
 
 
